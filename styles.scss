@@ -1,0 +1,115 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  background-color: hsl(0, 0%, 86%);
+}
+
+main {
+  width: 100%;
+  margin: 10vh auto;
+  background-color: white;
+  border-radius: 1em 1em 10em 1em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  border-bottom: solid 1px hsl(0, 0, 86%);
+  margin-bottom: 4em;
+
+  div {
+    width: 30%;
+    margin-right: 10px;
+  }
+
+}
+
+label {
+  display: block;
+  margin-bottom: 7px;
+  color: hsl(0, 1%, 44%);
+  font-size: 0.7em;
+  letter-spacing: 2px;
+
+  &.error {
+    color: hsl(0, 100%, 67%);
+  }
+}
+
+input {
+  font-size: 1.5em;
+  font-weight: 800;
+  width: 100%;
+  border: solid 1px hsl(0, 0, 86%);
+  border-radius: 5px;
+  cursor: pointer;
+
+  &.error {
+    border: solid 1px hsl(0, 100%, 67%);
+  }
+}
+
+.errorField {
+  margin: 0;
+  visibility: hidden;
+  font-size: 0.6em;
+  font-style: italic;
+  font-weight: 400;
+  color: hsl(0, 100%, 67%);
+}
+
+
+.btn {
+
+  width: 70px;
+  height: 70px;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  border: none;
+  position: relative;
+  //left: 90%;
+  bottom: -40px;
+  cursor: pointer;
+
+  img {
+    width: 65%;
+  }
+}
+
+.output {
+  font-size: 3em;
+  font-weight: 800;
+  font-style: italic;
+  height: 80px;
+
+  span {
+    color: hsl(259, 100%, 65%);
+  }
+}
+
+@media (min-width: 600px) {
+  main {
+    width: 600px;
+    padding: 3em;
+  }
+  form {
+    justify-content: space-between;
+    margin-bottom: 1em;
+    div {
+      width: 100px;
+    }
+  }
+  .output {
+    font-size: 5em;
+  }
+  .errorField{
+    margin-bottom: 3em;
+  }
+  .btn{
+    bottom: -70px;
+  }
+}
+
