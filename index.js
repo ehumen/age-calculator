@@ -18,28 +18,30 @@ const countingAge = (birthDate) => {
         dayDiff = bDate.getDate() - d1 + presentDate.getDate();
         --monthDiff;
     }
-
-    document.getElementById("years").innerText = yearDiff;
-    document.getElementById("months").innerText = monthDiff;
-    document.getElementById("days").innerText = dayDiff;
-
-    // document.getElementById("years").classList.add('submit');
-    // document.getElementById("months").innerText = monthDiff;
-    // document.getElementById("days").innerText = dayDiff;
-
+//outputting age
+    animateCounting("years", yearDiff);
+    animateCounting("months", monthDiff);
+    animateCounting("days", dayDiff);
 }
 
 //short handle for adding error classes
-
 const setErrors = () => {
-    document.querySelectorAll('label').forEach((el)=>el.classList.add('error'));
-    document.querySelectorAll('input').forEach((el)=>el.classList.add('error'));
+    document.querySelectorAll('label').forEach((el) => el.classList.add('error'));
+    document.querySelectorAll('input').forEach((el) => el.classList.add('error'));
+}
+const unSetErrors = () => {
+    document.querySelectorAll('label').forEach((el) => el.classList.remove('error'));
+    document.querySelectorAll('input').forEach((el) => el.classList.remove('error'));
+}
+//light animation fo outputting age to the output fields
+const animateCounting = (id, numb) => {
+    for (let i = 0; i <= numb; i++) {
+        setTimeout(function () {
+            document.getElementById(id).innerText = i;
+        }, 20 * i);
+    }
+}
 
-}
-const unSetErrors = ()=>{
-    document.querySelectorAll('label').forEach((el)=>el.classList.remove('error'));
-    document.querySelectorAll('input').forEach((el)=>el.classList.remove('error'));
-}
 const calculate = (e) => {
     e.preventDefault();
     let errorY;
@@ -47,11 +49,11 @@ const calculate = (e) => {
     let errorD;
     const loMnths = [4, 6, 9, 11];
     const yearPatten = new RegExp('[0-9]{4}');
+
+    //creating  new Date object from users data
     const bDay = document.getElementById('bDay').value;
     const bMonth = document.getElementById('bMonth').value;
     const bYear = document.getElementById('bYear').value;
-
-
     const bDate = new Date(`${bYear}-${bMonth}-${bDay}`);
 
     const yearErrorField = document.getElementById('yearError');
