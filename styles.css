@@ -16,7 +16,7 @@ main {
 form {
   display: flex;
   justify-content: space-evenly;
-  -webkit-justify-content: space-between;
+  -webkit-justify-content: center;
   flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
   border-bottom: solid 1px hsl(0, 0%, 86%);
